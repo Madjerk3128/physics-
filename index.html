@@ -2,173 +2,276 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Anna University Engineering Physics – Prediction 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PH23C01 Engineering Physics – Corrected Predicted Papers 2026</title>
 <style>
-body{font-family:'Times New Roman',serif;max-width:900px;margin:auto;padding:30px;background:#f9f6f0;}
-h1{text-align:center;color:#7b1a1a;font-size:22pt;}
-h2{color:#7b1a1a;border-bottom:2px solid #7b1a1a;padding-bottom:4px;}
-h3{color:#333;}
-table{width:100%;border-collapse:collapse;margin-bottom:20px;}
-th{background:#7b1a1a;color:#fff;padding:8px;}
-td{border:1px solid #ccc;padding:7px;}
-tr:nth-child(even){background:#f2e8d5;}
-.high{color:green;font-weight:bold;}
-.med{color:darkorange;font-weight:bold;}
-.low{color:#888;}
-.set-links{display:flex;gap:20px;flex-wrap:wrap;margin:20px 0;}
-.set-links a{display:inline-block;padding:14px 30px;background:#7b1a1a;color:#fff;text-decoration:none;border-radius:6px;font-size:14pt;font-weight:bold;}
-.set-links a:hover{background:#a52828;}
-.disclaimer{background:#fff3cd;border-left:4px solid #ffc107;padding:12px;margin:20px 0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#0f1117;color:#e0e0e0;}
+header{background:linear-gradient(135deg,#7b1a1a,#c0392b);padding:28px 40px;position:relative;}
+header h1{font-size:19pt;color:#fff;text-align:center;line-height:1.4;}
+header p{text-align:center;color:#ffd6d6;margin-top:5px;font-size:10pt;}
+#print-btn{position:absolute;top:18px;right:18px;background:#fff;color:#7b1a1a;border:none;padding:11px 20px;border-radius:8px;font-size:12pt;font-weight:bold;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);transition:all .2s;}
+#print-btn:hover{background:#ffe0e0;transform:scale(1.05);}
+.container{max-width:1000px;margin:30px auto;padding:0 20px;}
+.removed-banner{background:#2a0000;border:2px solid #c0392b;border-radius:10px;padding:16px 20px;margin-bottom:25px;}
+.removed-banner h3{color:#ff6b6b;margin-bottom:8px;font-size:13pt;}
+.removed-banner ul{color:#ffaaaa;list-style:none;display:flex;flex-wrap:wrap;gap:8px;}
+.removed-banner ul li{background:#4a0000;padding:4px 12px;border-radius:20px;font-size:10pt;}
+.kept-banner{background:#002a0a;border:2px solid #27ae60;border-radius:10px;padding:16px 20px;margin-bottom:25px;}
+.kept-banner h3{color:#2ecc71;margin-bottom:8px;font-size:13pt;}
+.sets-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:35px;}
+.set-card{background:#1a1d27;border:1px solid #333;border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.set-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(192,57,43,0.3);}
+.set-card-header{background:linear-gradient(135deg,#7b1a1a,#c0392b);padding:16px;text-align:center;}
+.set-card-header h2{color:#fff;font-size:16pt;}
+.set-card-body{padding:16px;}
+.set-card-body ul{list-style:none;color:#aaa;font-size:9.5pt;line-height:1.9;}
+.set-card-body ul li::before{content:"✓ ";color:#2ecc71;}
+.set-card-footer{padding:12px 16px;display:flex;gap:10px;}
+.btn-view{flex:1;padding:10px;background:#c0392b;color:#fff;border:none;border-radius:6px;font-size:10.5pt;font-weight:bold;cursor:pointer;text-decoration:none;text-align:center;transition:background .2s;}
+.btn-view:hover{background:#e74c3c;}
+.btn-print-one{padding:10px 13px;background:#333;color:#fff;border:none;border-radius:6px;font-size:11pt;cursor:pointer;}
+section{margin-bottom:35px;}
+section h2{color:#e74c3c;font-size:14pt;border-bottom:2px solid #333;padding-bottom:7px;margin-bottom:14px;}
+table{width:100%;border-collapse:collapse;font-size:9.5pt;}
+th{background:#7b1a1a;color:#fff;padding:9px;text-align:left;}
+td{border:1px solid #2a2d3a;padding:8px;vertical-align:top;}
+tr:nth-child(even) td{background:#161923;}
+.high{color:#2ecc71;font-weight:bold;}
+.med{color:#f39c12;font-weight:bold;}
+.strike{text-decoration:line-through;color:#666;}
+.badge-out{background:#4a0000;color:#ff6b6b;padding:2px 8px;border-radius:10px;font-size:8.5pt;margin-left:5px;}
+footer{text-align:center;padding:18px;color:#555;font-size:9pt;border-top:1px solid #222;}
+@media(max-width:600px){.sets-grid{grid-template-columns:1fr;}#print-btn{font-size:9pt;padding:8px 12px;}}
 </style>
 </head>
 <body>
 
-<h1>🎓 Anna University Engineering Physics<br>End Semester Examination – JUNE 2026<br>Predicted Question Papers</h1>
+<header>
+  <button id="print-btn" onclick="printAllSets()">🖨️ Print All Sets (PDF)</button>
+  <h1>🎓 PH23C01 – Engineering Physics<br>End Semester Examination – June 2026</h1>
+  <p>Corrected Predicted Papers | Based on Actual Portions | Sets A · B · C · D</p>
+</header>
 
-<div class="disclaimer">
-⚠️ <b>Disclaimer:</b> These are evidence-based predictions only. They do not guarantee exact questions. Study all units thoroughly.
+<div class="container">
+
+<!-- REMOVED TOPICS BANNER -->
+<div class="removed-banner">
+  <h3>❌ REMOVED – Not in Portions (Crossed Out in Your Notes)</h3>
+  <ul>
+    <li>Stress-strain diagram</li>
+    <li>Cantilever</li>
+    <li>Uniform bending</li>
+    <li>Non-uniform bending</li>
+    <li>Nd-YAG Laser</li>
+    <li>CO₂ Laser</li>
+    <li>Semiconductor Laser</li>
+    <li>Ruby Laser</li>
+    <li>He-Ne Laser</li>
+    <li>Einstein A&amp;B Coefficients</li>
+    <li>Superconductivity</li>
+    <li>Band Theory / Fermi Energy</li>
+    <li>Hall Effect</li>
+    <li>Bragg's Law / X-ray diffraction</li>
+    <li>NaCl / ZnS / Diamond structure</li>
+    <li>Miller Indices</li>
+  </ul>
 </div>
 
-<h2>📊 Unit-wise Probability Analysis</h2>
-<table>
-<tr><th>Unit</th><th>Topic</th><th>Weightage</th><th>Probability</th></tr>
-<tr><td>Unit I</td><td>Crystal Physics & X-ray Diffraction</td><td>20%</td><td class="high">HIGH (90–100%)</td></tr>
-<tr><td>Unit II</td><td>Lasers & Optical Fibres</td><td>25%</td><td class="high">HIGH (90–100%)</td></tr>
-<tr><td>Unit III</td><td>Quantum Mechanics</td><td>20%</td><td class="high">HIGH (85–95%)</td></tr>
-<tr><td>Unit IV</td><td>Electron Theory & Band Theory</td><td>20%</td><td class="med">MEDIUM (75–90%)</td></tr>
-<tr><td>Unit V</td><td>Superconductivity / Nanomaterials</td><td>15%</td><td class="med">MEDIUM (70–85%)</td></tr>
-</table>
+<!-- UNIT BREAKDOWN -->
+<section>
+  <h2>📋 Corrected Unit-wise Portion Analysis (PH23C01)</h2>
+  <table>
+    <tr><th>Unit</th><th>Official Topic</th><th>IN Portions ✅</th><th>NOT in Portions ❌</th></tr>
+    <tr>
+      <td><b>Unit I</b><br>Crystal Physics</td>
+      <td>Crystal systems, packing, structures, crystal growth</td>
+      <td class="high">✅ Packing factors (FCC, HCP, BCC)<br>✅ Czochralski method<br>✅ Vapor Phase Epitaxy<br>✅ Molecular Beam Epitaxy</td>
+      <td><span class="strike">NaCl / Diamond structures</span><br><span class="strike">Miller indices</span><br><span class="strike">Bragg's law</span><br><span class="strike">Crystal imperfections</span></td>
+    </tr>
+    <tr>
+      <td><b>Unit II</b><br>Mechanics of Materials</td>
+      <td>Elasticity, bending, torsion, viscosity</td>
+      <td class="high">✅ Simply supported beams<br>✅ Young's modulus determination<br>✅ Twisting couple / Torsion</td>
+      <td><span class="strike">Stress-strain diagram</span><br><span class="strike">Cantilever</span><br><span class="strike">Uniform/Non-uniform bending</span><br><span class="strike">Viscosity</span></td>
+    </tr>
+    <tr>
+      <td><b>Unit III</b><br>Oscillations, Sound &amp; Thermal</td>
+      <td>SHM, damping, resonance, waves, Doppler, thermal</td>
+      <td class="high">✅ SHM (full theory)<br>✅ Torsional pendulum<br>✅ Damped oscillations<br>✅ Shock absorber<br>✅ Forced oscillations &amp; resonance<br>✅ Applications of resonance<br>✅ Doppler effect<br>✅ Echolocation &amp; Medical Imaging</td>
+      <td><span class="strike">Thermal expansion</span><br><span class="strike">Bimetallic strip</span><br><span class="strike">Seebeck effect</span><br><span class="strike">Heat transfer</span></td>
+    </tr>
+    <tr>
+      <td><b>Unit IV</b><br>Optics &amp; Lasers</td>
+      <td>Interference, diffraction, lasers, optical fibres</td>
+      <td class="high">✅ Air wedge (thin film interference)<br>✅ Michelson Interferometer<br>✅ Numerical aperture &amp; acceptance angle</td>
+      <td><span class="strike">Nd-YAG Laser</span><br><span class="strike">CO₂ Laser</span><br><span class="strike">Semiconductor Laser</span><br><span class="strike">Diffraction grating</span><br><span class="strike">Polarization</span></td>
+    </tr>
+    <tr>
+      <td><b>Unit V</b><br>Quantum Mechanics</td>
+      <td>de Broglie, Uncertainty principle, Schrödinger, particle in box</td>
+      <td class="high">✅ Electron microscope (TEM/SEM)<br>✅ Schrödinger eqn (time-indep &amp; time-dep)<br>✅ Particle in 1D infinite well<br>✅ Particle in 3D box<br>✅ Tunnelling microscope (STM)</td>
+      <td><span class="strike">Photoelectric effect (only demo)</span><br><span class="strike">Compton effect</span><br><span class="strike">Black body radiation</span></td>
+    </tr>
+  </table>
+</section>
 
-<h2>🔥 Top 50 Most Probable 2-Mark Questions</h2>
-<table>
-<tr><th>#</th><th>Question</th><th>Unit</th><th>Probability</th></tr>
-<tr><td>1</td><td>Define lattice, basis, and unit cell</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>2</td><td>State Bragg's law with formula</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>3</td><td>Calculate APF for BCC/FCC/SC</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>4</td><td>Define Miller indices and how to find them</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>5</td><td>Coordination number for SC, BCC, FCC</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>6</td><td>Distinguish spontaneous and stimulated emission</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>7</td><td>Define population inversion and metastable state</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>8</td><td>Define numerical aperture and acceptance angle</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>9</td><td>Distinguish temporal and spatial coherence</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>10</td><td>What is pumping? Name the types of pumping</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>11</td><td>Heisenberg's Uncertainty Principle with example</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>12</td><td>Physical significance of wave function ψ</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>13</td><td>de Broglie hypothesis – equation and significance</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>14</td><td>Phase velocity vs group velocity</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>15</td><td>What is Compton effect? Give expression for shift</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>16</td><td>Define Fermi level and its significance in metals</td><td>IV</td><td class="high">HIGH</td></tr>
-<tr><td>17</td><td>State Wiedemann-Franz law and Lorentz number</td><td>IV</td><td class="high">HIGH</td></tr>
-<tr><td>18</td><td>What is Hall effect? Write Hall coefficient formula</td><td>IV</td><td class="high">HIGH</td></tr>
-<tr><td>19</td><td>Distinguish intrinsic and extrinsic semiconductors</td><td>IV</td><td class="high">HIGH</td></tr>
-<tr><td>20</td><td>Define critical temperature and critical field</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>21</td><td>Distinguish Type-I and Type-II superconductors</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>22</td><td>What are Cooper pairs? BCS theory basics</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>23</td><td>Meissner effect – explain and significance</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>24</td><td>What is Josephson effect (DC and AC)?</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>25</td><td>Number of atoms per unit cell: SC, BCC, FCC</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>26</td><td>What is Laue method? What does it prove?</td><td>I</td><td class="med">MEDIUM</td></tr>
-<tr><td>27</td><td>What is powder diffraction method?</td><td>I</td><td class="med">MEDIUM</td></tr>
-<tr><td>28</td><td>Differences between SC, BCC, FCC structures</td><td>I</td><td class="med">MEDIUM</td></tr>
-<tr><td>29</td><td>Define c/a ratio for HCP and its value</td><td>I</td><td class="med">MEDIUM</td></tr>
-<tr><td>30</td><td>What is four-level laser? Advantage over three-level?</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>31</td><td>Distinguish step-index and graded-index fibres</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>32</td><td>What is V-number (normalized frequency)?</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>33</td><td>Applications of laser – list at least four</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>34</td><td>What is holography? Principle</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>35</td><td>Define quantum confinement and quantum dots</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>36</td><td>State postulates of quantum mechanics</td><td>III</td><td class="med">MEDIUM</td></tr>
-<tr><td>37</td><td>Zero-point energy of harmonic oscillator</td><td>III</td><td class="med">MEDIUM</td></tr>
-<tr><td>38</td><td>What is quantum tunnelling?</td><td>III</td><td class="med">MEDIUM</td></tr>
-<tr><td>39</td><td>Effective mass of electron – concept</td><td>IV</td><td class="med">MEDIUM</td></tr>
-<tr><td>40</td><td>Kronig-Penney model – concept</td><td>IV</td><td class="med">MEDIUM</td></tr>
-<tr><td>41</td><td>What is flux quantization? Give flux quantum</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>42</td><td>London penetration depth and coherence length</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>43</td><td>High-temperature superconductors – examples</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>44</td><td>What are nanotubes – SWCNT vs MWCNT?</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>45</td><td>Properties of graphene</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>46</td><td>de Broglie wavelength of thermal neutron at 300 K</td><td>III</td><td class="med">MEDIUM</td></tr>
-<tr><td>47</td><td>What is Bravais lattice? How many in 3D?</td><td>I</td><td class="med">MEDIUM</td></tr>
-<tr><td>48</td><td>Define refractive index of core and cladding</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>49</td><td>What is SQUID? Full form and basic principle</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>50</td><td>Distinguish conductor, semiconductor, insulator by band gap</td><td>IV</td><td class="med">MEDIUM</td></tr>
-</table>
+<!-- PROBABILITY ANALYSIS -->
+<section>
+  <h2>📊 Corrected Probability Analysis – 13-Mark Questions</h2>
+  <table>
+    <tr><th>Unit</th><th>Most Probable 13-Mark Question</th><th>Probability</th></tr>
+    <tr><td>I – Crystal</td><td>Packing factor of HCP (derive c/a ratio = 1.633, APF = 74%)</td><td class="high">HIGH 95%</td></tr>
+    <tr><td>I – Crystal</td><td>Compare FCC, BCC, HCP packing + Crystal growth methods</td><td class="high">HIGH 90%</td></tr>
+    <tr><td>II – Mechanics</td><td>Simply supported beam – derive deflection formula + numerical</td><td class="high">HIGH 95%</td></tr>
+    <tr><td>II – Mechanics</td><td>Torsional rigidity (twisting couple) derivation + rigidity modulus</td><td class="high">HIGH 90%</td></tr>
+    <tr><td>III – Oscillations</td><td>Damped oscillations – 3 cases + shock absorber application</td><td class="high">HIGH 92%</td></tr>
+    <tr><td>III – Oscillations</td><td>Forced oscillations + resonance + Q-factor + applications</td><td class="high">HIGH 90%</td></tr>
+    <tr><td>III – Oscillations</td><td>Doppler effect – all cases derivation + applications</td><td class="high">HIGH 88%</td></tr>
+    <tr><td>III – Oscillations</td><td>Echolocation + SONAR + Medical Imaging (Ultrasound)</td><td class="med">MED 80%</td></tr>
+    <tr><td>IV – Optics</td><td>Air wedge – fringe width derivation + numerical</td><td class="high">HIGH 95%</td></tr>
+    <tr><td>IV – Optics</td><td>Michelson Interferometer – construction + wavelength measurement</td><td class="high">HIGH 92%</td></tr>
+    <tr><td>IV – Optics</td><td>Numerical Aperture + acceptance angle derivation + numerical</td><td class="high">HIGH 90%</td></tr>
+    <tr><td>V – Quantum</td><td>Schrödinger eqn + particle in 1D box (energy + wavefunction)</td><td class="high">HIGH 95%</td></tr>
+    <tr><td>V – Quantum</td><td>Particle in 3D box + degeneracy</td><td class="high">HIGH 88%</td></tr>
+    <tr><td>V – Quantum</td><td>Electron Microscope (TEM/SEM) + de Broglie concept</td><td class="high">HIGH 85%</td></tr>
+    <tr><td>V – Quantum</td><td>Quantum Tunnelling + Scanning Tunnelling Microscope (STM)</td><td class="med">MED 80%</td></tr>
+  </table>
+</section>
 
-<h2>📝 Top 30 Most Probable 13-Mark Questions</h2>
-<table>
-<tr><th>#</th><th>Question</th><th>Unit</th><th>Probability</th></tr>
-<tr><td>1</td><td>Derive interplanar spacing in cubic crystal + Miller indices with examples</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>2</td><td>NaCl / ZnS crystal structure with coordination number and packing</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>3</td><td>Diamond cubic structure + packing factor derivation</td><td>I</td><td class="high">HIGH</td></tr>
-<tr><td>4</td><td>Einstein's A and B coefficients – derive energy density relation</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>5</td><td>Ruby Laser – construction, working, energy level diagram</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>6</td><td>He-Ne Laser – construction, working, energy level diagram</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>7</td><td>Semiconductor / diode laser – principle, double heterostructure</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>8</td><td>Optical fibre – NA and acceptance angle derivation + numericals</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>9</td><td>Optical fibre communication system – block diagram</td><td>II</td><td class="high">HIGH</td></tr>
-<tr><td>10</td><td>Time-independent Schrödinger equation derivation</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>11</td><td>Particle in 1D infinite potential well – energy levels + wavefunctions</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>12</td><td>Davisson-Germer experiment – description and verification</td><td>III</td><td class="high">HIGH</td></tr>
-<tr><td>13</td><td>Classical free electron theory – conductivity + successes & failures</td><td>IV</td><td class="high">HIGH</td></tr>
-<tr><td>14</td><td>Fermi-Dirac distribution + Fermi energy variation with temperature</td><td>IV</td><td class="high">HIGH</td></tr>
-<tr><td>15</td><td>Density of states derivation in 3D free electron gas</td><td>IV</td><td class="high">HIGH</td></tr>
-<tr><td>16</td><td>BCS theory of superconductivity – Cooper pairs + energy gap</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>17</td><td>Meissner effect – derivation and proof of perfect diamagnetism</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>18</td><td>Applications of superconductors: SQUID, Maglev, MRI</td><td>V</td><td class="high">HIGH</td></tr>
-<tr><td>19</td><td>Seven crystal systems + Bravais lattices classification</td><td>I</td><td class="med">MEDIUM</td></tr>
-<tr><td>20</td><td>HCP structure – c/a ratio and packing factor</td><td>I</td><td class="med">MEDIUM</td></tr>
-<tr><td>21</td><td>CO₂ laser / Nd:YAG laser – construction and applications</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>22</td><td>Holography – principle, recording, reconstruction</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>23</td><td>Optical fibre losses – absorption, scattering, bending</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>24</td><td>Optical fibre sensors – intensity and phase modulated types</td><td>II</td><td class="med">MEDIUM</td></tr>
-<tr><td>25</td><td>Quantum tunnelling – transmission coefficient derivation</td><td>III</td><td class="med">MEDIUM</td></tr>
-<tr><td>26</td><td>Particle in 3D box – energy levels and degeneracy</td><td>III</td><td class="med">MEDIUM</td></tr>
-<tr><td>27</td><td>Band theory – Kronig-Penney model, allowed/forbidden bands</td><td>IV</td><td class="med">MEDIUM</td></tr>
-<tr><td>28</td><td>Hall effect – derivation and applications</td><td>IV</td><td class="med">MEDIUM</td></tr>
-<tr><td>29</td><td>London equations derivation + Meissner effect explanation</td><td>V</td><td class="med">MEDIUM</td></tr>
-<tr><td>30</td><td>Carbon nanotubes – structure, chirality, electrical properties</td><td>V</td><td class="med">MEDIUM</td></tr>
-</table>
+<section>
+  <h2>⭐ Most Probable Part-C (15 Mark) Questions</h2>
+  <table>
+    <tr><th>#</th><th>Question</th><th>Probability</th></tr>
+    <tr><td>1</td><td>Schrödinger eqn + 1D box (derive eigenvalues &amp; wavefunctions) + numerical (photon wavelength emitted)</td><td class="high">HIGH 95%</td></tr>
+    <tr><td>2</td><td>Forced oscillations – amplitude/phase derivation + resonance curves + Q-factor + numerical</td><td class="high">HIGH 90%</td></tr>
+    <tr><td>3</td><td>Simply supported beam – full derivation + Young's modulus experiment + numerical</td><td class="high">HIGH 88%</td></tr>
+    <tr><td>4</td><td>Particle in 3D box + degeneracy + electron confinement numerical</td><td class="med">MED 80%</td></tr>
+    <tr><td>5</td><td>Air wedge + Michelson Interferometer combined (optics lab-based)</td><td class="med">MED 75%</td></tr>
+  </table>
+</section>
 
-<h2>⭐ Top 10 Most Probable 15-Mark Questions (Part C)</h2>
-<table>
-<tr><th>#</th><th>Question</th><th>Probability</th></tr>
-<tr><td>1</td><td>Density of states derivation + Fermi energy at 0K + Fermi-Dirac + numerical on copper</td><td class="high">HIGH (95%)</td></tr>
-<tr><td>2</td><td>BCS theory full derivation + critical current numerical (Nb/Pb wire problem)</td><td class="high">HIGH (90%)</td></tr>
-<tr><td>3</td><td>Schrödinger equation + particle in 3D box + tunnelling numerical</td><td class="high">HIGH (88%)</td></tr>
-<tr><td>4</td><td>Intrinsic semiconductor: carrier concentration + Fermi level + doping effects</td><td class="high">HIGH (85%)</td></tr>
-<tr><td>5</td><td>Optical fibre – full system + NA derivation + attenuation numerical</td><td class="high">HIGH (85%)</td></tr>
-<tr><td>6</td><td>Laser full theory: Einstein coefficients + Ruby laser + numerical on stimulated emission</td><td class="med">MEDIUM (78%)</td></tr>
-<tr><td>7</td><td>Crystal structure: NaCl + Bragg's law + X-ray diffraction numerical</td><td class="med">MEDIUM (75%)</td></tr>
-<tr><td>8</td><td>Quantum free electron theory (Sommerfeld) + conductivity + relaxation time numerical</td><td class="med">MEDIUM (75%)</td></tr>
-<tr><td>9</td><td>Davisson-Germer experiment + de Broglie wavelength derivation + verification</td><td class="med">MEDIUM (72%)</td></tr>
-<tr><td>10</td><td>Nanomaterials: quantum confinement + CNT structure + graphene applications</td><td class="med">MEDIUM (70%)</td></tr>
-</table>
+<section>
+  <h2>🔥 Top 20 Probable 2-Mark Questions (In-Portions Only)</h2>
+  <table>
+    <tr><th>#</th><th>Question</th><th>Unit</th><th>Prob.</th></tr>
+    <tr><td>1</td><td>Define atomic packing factor. State APF values for SC, BCC, FCC, HCP.</td><td>I</td><td class="high">HIGH</td></tr>
+    <tr><td>2</td><td>What is Czochralski method? State one material grown.</td><td>I</td><td class="high">HIGH</td></tr>
+    <tr><td>3</td><td>Number of atoms per unit cell: SC, BCC, FCC, HCP.</td><td>I</td><td class="high">HIGH</td></tr>
+    <tr><td>4</td><td>Define Poisson's ratio. State its limits.</td><td>II</td><td class="high">HIGH</td></tr>
+    <tr><td>5</td><td>What is twisting couple? Write formula for solid cylinder.</td><td>II</td><td class="high">HIGH</td></tr>
+    <tr><td>6</td><td>Formula for depression in simply supported beam at centre.</td><td>II</td><td class="high">HIGH</td></tr>
+    <tr><td>7</td><td>Define SHM. Give its differential equation.</td><td>III</td><td class="high">HIGH</td></tr>
+    <tr><td>8</td><td>What is damping? Types of damped oscillations.</td><td>III</td><td class="high">HIGH</td></tr>
+    <tr><td>9</td><td>Define resonance. State the resonance condition.</td><td>III</td><td class="high">HIGH</td></tr>
+    <tr><td>10</td><td>State Doppler effect. Write the general frequency formula.</td><td>III</td><td class="high">HIGH</td></tr>
+    <tr><td>11</td><td>What is echolocation? Which animals use it?</td><td>III</td><td class="high">HIGH</td></tr>
+    <tr><td>12</td><td>What is air wedge? Why are fringes straight and parallel?</td><td>IV</td><td class="high">HIGH</td></tr>
+    <tr><td>13</td><td>Define fringe width in air wedge. Write formula β = λ/2θ.</td><td>IV</td><td class="high">HIGH</td></tr>
+    <tr><td>14</td><td>State the use of Michelson Interferometer.</td><td>IV</td><td class="high">HIGH</td></tr>
+    <tr><td>15</td><td>Define numerical aperture. State its formula and typical range.</td><td>IV</td><td class="high">HIGH</td></tr>
+    <tr><td>16</td><td>State Heisenberg Uncertainty Principle (both forms).</td><td>V</td><td class="high">HIGH</td></tr>
+    <tr><td>17</td><td>What is de Broglie wavelength? Why can't we observe it for macroscopic objects?</td><td>V</td><td class="high">HIGH</td></tr>
+    <tr><td>18</td><td>Write Schrödinger's time-independent equation. What does each term represent?</td><td>V</td><td class="high">HIGH</td></tr>
+    <tr><td>19</td><td>What is zero-point energy? Write its value for particle in 1D box.</td><td>V</td><td class="high">HIGH</td></tr>
+    <tr><td>20</td><td>What is quantum tunnelling? Give one natural example.</td><td>V</td><td class="high">HIGH</td></tr>
+  </table>
+</section>
 
-<h2>📄 Predicted Question Paper Sets</h2>
-<div class="set-links">
-  <a href="set_a.html">📋 SET – A</a>
-  <a href="set_b.html">📋 SET – B</a>
-  <a href="set_c.html">📋 SET – C</a>
-  <a href="set_d.html">📋 SET – D</a>
+<!-- SET CARDS -->
+<section>
+  <h2>📄 Corrected Predicted Question Paper Sets</h2>
+  <div class="sets-grid">
+    <div class="set-card">
+      <div class="set-card-header"><h2>SET – A</h2></div>
+      <div class="set-card-body"><ul>
+        <li>Q11: FCC APF + VPE / BCC APF + Czochralski</li>
+        <li>Q12: Simply supported beam derivation + numerical</li>
+        <li>Q13: SHM + Torsional pendulum / Forced osc. + Doppler</li>
+        <li>Q14: Air wedge + numerical / Michelson + NA</li>
+        <li>Q15: Schrödinger + 1D box / Electron microscope + STM</li>
+        <li>Q16: Time-dep Schrödinger + 3D box + numerical</li>
+      </ul></div>
+      <div class="set-card-footer">
+        <a class="btn-view" href="https://madjerk3128.github.io/physics-/set_a.html" target="_blank">🔗 Open Set A</a>
+        <button class="btn-print-one" onclick="printOne('set_a.html')">🖨️</button>
+      </div>
+    </div>
+    <div class="set-card">
+      <div class="set-card-header"><h2>SET – B</h2></div>
+      <div class="set-card-body"><ul>
+        <li>Q11: HCP APF + MBE / All 3 structures + VPE</li>
+        <li>Q12: Simply supported beam numerical / Torsional pendulum experiment</li>
+        <li>Q13: Damped osc. + Echolocation / Forced osc. + Doppler numerical</li>
+        <li>Q14: Michelson + numerical / Air wedge derivation</li>
+        <li>Q15: Time-dep Schrödinger + TEM / 1D box + probability</li>
+        <li>Q16: Forced oscillations full derivation + Q-factor numerical</li>
+      </ul></div>
+      <div class="set-card-footer">
+        <a class="btn-view" href="https://madjerk3128.github.io/physics-/set_b.html" target="_blank">🔗 Open Set B</a>
+        <button class="btn-print-one" onclick="printOne('set_b.html')">🖨️</button>
+      </div>
+    </div>
+    <div class="set-card">
+      <div class="set-card-header"><h2>SET – C</h2></div>
+      <div class="set-card-body"><ul>
+        <li>Q11: FCC APF + Czochralski / HCP APF + VPE vs MBE</li>
+        <li>Q12: Young's modulus experiment + numerical / Twisting couple</li>
+        <li>Q13: SHM + torsional pendulum / Damped osc. + Doppler applications</li>
+        <li>Q14: Air wedge + wedge angle numerical / NA + acceptance angle</li>
+        <li>Q15: Uncertainty principle + STM / 3D box + degeneracy</li>
+        <li>Q16: 1D box full derivation + photon emission numerical</li>
+      </ul></div>
+      <div class="set-card-footer">
+        <a class="btn-view" href="https://madjerk3128.github.io/physics-/set_c.html" target="_blank">🔗 Open Set C</a>
+        <button class="btn-print-one" onclick="printOne('set_c.html')">🖨️</button>
+      </div>
+    </div>
+    <div class="set-card">
+      <div class="set-card-header"><h2>SET – D</h2></div>
+      <div class="set-card-body"><ul>
+        <li>Q11: BCC + FCC APF + MBE / HCP actual vs ideal + compare methods</li>
+        <li>Q12: Simply supported beam + load calculation / Young's experiment + hollow shaft</li>
+        <li>Q13: SHM energy + Q-factor / Doppler all cases + echolocation numerical</li>
+        <li>Q14: Michelson + refractive index / NA + fibre modes</li>
+        <li>Q15: 3D box + triple degeneracy + STM / TEM vs SEM + de Broglie numerical</li>
+        <li>Q16: Young's modulus full experiment + beam orientation analysis</li>
+      </ul></div>
+      <div class="set-card-footer">
+        <a class="btn-view" href="https://madjerk3128.github.io/physics-/set_d.html" target="_blank">🔗 Open Set D</a>
+        <button class="btn-print-one" onclick="printOne('set_d.html')">🖨️</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 </div>
 
-<h2>💡 Last-Minute Focus Areas</h2>
-<table>
-<tr><th>Topic</th><th>Priority</th><th>Why</th></tr>
-<tr><td>Density of States + Fermi Energy</td><td class="high">🔴 MUST KNOW</td><td>Part C favourite – asked almost every year</td></tr>
-<tr><td>Schrödinger Equation + 1D Box</td><td class="high">🔴 MUST KNOW</td><td>Core quantum mechanics – always in Part B</td></tr>
-<tr><td>Lasers (Ruby + He-Ne + Semiconductor)</td><td class="high">🔴 MUST KNOW</td><td>Highest frequency Part B question</td></tr>
-<tr><td>Optical Fibre NA + Communication</td><td class="high">🔴 MUST KNOW</td><td>Always appears with numerical</td></tr>
-<tr><td>BCS Theory + Meissner Effect</td><td class="high">🔴 MUST KNOW</td><td>Frequently in Part B and C</td></tr>
-<tr><td>Einstein's A &amp; B Coefficients</td><td class="med">🟠 HIGH</td><td>Almost every exam</td></tr>
-<tr><td>Crystal Structures (NaCl, ZnS, Diamond)</td><td class="med">🟠 HIGH</td><td>Reliable Part B Q11</td></tr>
-<tr><td>Bragg's Law + Numericals</td><td class="med">🟠 HIGH</td><td>Very frequent 2M and Part B</td></tr>
-<tr><td>Hall Effect Derivation</td><td class="med">🟠 HIGH</td><td>Often Part B Q14</td></tr>
-<tr><td>Nanomaterials + CNT + Graphene</td><td class="med">🟠 HIGH</td><td>Growing trend in recent years</td></tr>
-</table>
+<footer>PH23C01 Engineering Physics | June 2026 | Corrected based on actual portions | ⚠️ Predictions are probabilistic — study all topics thoroughly.</footer>
 
-<p style="text-align:center;color:#888;font-size:10pt;">Generated by AI Prediction Engine | Anna University Engineering Physics | June 2026<br>
-⚠️ Predictions are probabilistic. Study all units for guaranteed success.</p>
-
+<script>
+function getBase(){
+  const loc=window.location.href;
+  return(loc.startsWith('file://')||loc.includes('localhost'))?'./':'https://madjerk3128.github.io/physics-/';
+}
+function printAllSets(){
+  const btn=document.getElementById('print-btn');
+  btn.disabled=true;btn.textContent='⏳ Opening...';
+  const win=window.open(getBase()+'combined_all_sets.html','_blank');
+  if(!win){alert('Pop-up blocked! Please allow pop-ups and try again.');btn.disabled=false;btn.innerHTML='🖨️ Print All Sets (PDF)';return;}
+  win.onload=function(){
+    const s=win.document.createElement('style');
+    s.textContent='@media print{body{margin:10mm;font-family:"Times New Roman",serif;}.header{page-break-before:always;}.header:first-of-type{page-break-before:avoid;}}';
+    win.document.head.appendChild(s);
+    setTimeout(()=>{win.print();},800);
+  };
+  setTimeout(()=>{btn.disabled=false;btn.innerHTML='🖨️ Print All Sets (PDF)';},2500);
+}
+function printOne(file){
+  const win=window.open(getBase()+file,'_blank');
+  if(!win){alert('Pop-up blocked!');return;}
+  win.onload=()=>setTimeout(()=>win.print(),600);
+}
+</script>
 </body>
 </html>
